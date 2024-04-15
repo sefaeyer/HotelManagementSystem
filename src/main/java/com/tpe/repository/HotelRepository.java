@@ -2,11 +2,10 @@ package com.tpe.repository;
 
 import com.tpe.config.HibernateUtils;
 import com.tpe.domain.Hotel;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-//todo Room Guest ve Reservation icin service ve repo classlarini olusturalim : ODEV !!!
+//todo Room, Guest, ve Reservation icin service ve repo classlarini olusturalim : ODEV !!!
 public class HotelRepository {
 
     private Session session;
