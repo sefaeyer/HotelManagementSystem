@@ -1,9 +1,6 @@
 package com.tpe.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +18,18 @@ public class Hotel {
     @Column(nullable = false)
     private String location;
 
+
+    //orphanRemoval
+    //A otelinin odaları: 11,12,13
+    //A otelinin oda listesinden 11 i çıkarırsam:room tabledan 11 i siler
+
+    //cascade:
+    //A otelinin odaları: 11,12,13
+    //A otelinin oda listesinden 11 i çıkarırsam:room tableda 11 hala var
+
+
     //todo : one-to-many !!!
+    @OneToMany(mappedBy = "hotel",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)//hotel ile room arasinda iliski kurulmasini saglar: iliski tablosu ekler
     private List<Room> rooms = new ArrayList<>();
 
 
